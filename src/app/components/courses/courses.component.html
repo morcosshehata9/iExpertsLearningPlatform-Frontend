@@ -1,0 +1,30 @@
+<section class="lf-courses" id="courses">
+  <div class="container">
+    <div class="lf-section-header text-center">
+      <div class="lf-tag">Top Courses</div>
+      <h2>Start Learning Today</h2>
+      <p>Curated by industry experts. Updated every quarter.</p>
+    </div>
+    <div class="lf-courses__grid">
+      <div class="lf-course-card" *ngFor="let c of courses">
+        <div class="lf-course-card__thumb">
+          <span class="lf-course-card__emoji">{{ c.emoji }}</span>
+          <span class="lf-badge lf-badge--{{ c.tagColor }}">{{ c.tag }}</span>
+        </div>
+        <div class="lf-course-card__body">
+          <h3>{{ c.title }}</h3>
+          <p class="lf-course-card__instructor">by {{ c.instructor }}</p>
+          <div class="lf-course-card__meta">
+            <span>📚 {{ c.lessons }} lessons</span>
+            <span>⏱ {{ c.duration }}</span>
+            <span>📊 {{ c.level }}</span>
+          </div>
+          <div class="lf-course-card__footer">
+            <span class="lf-rating">★ {{ c.rating }}</span>
+            <button class="lf-btn lf-btn--primary lf-btn--sm">Enrol Now</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,159 @@
+<section class="lf-contact" id="contact">
+  <div class="container">
+    <div class="lf-contact__layout">
+      <div class="lf-contact__info">
+        <div class="lf-tag">Contact Us</div>
+        <h2>Start Your Learning Journey Today</h2>
+        <p>
+          Have a question about a course? Want a team plan? We'd love to hear
+          from you.
+        </p>
+        <div class="lf-contact__items">
+          <div class="lf-contact__item">
+            📧<span>hello&#64;iExpertsLearningPlatform.io</span>
+          </div>
+          <div class="lf-contact__item">
+            💬<span>Live chat available Mon–Fri, 9am–6pm GMT</span>
+          </div>
+          <div class="lf-contact__item">
+            ⚡<span>We reply within 24 hours</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="lf-contact__form-wrap">
+        <div
+          *ngIf="status() === 'success'"
+          class="lf-state lf-state--success lf-fade-in"
+        >
+          <div class="lf-state__icon-wrap">
+            <div class="lf-state__icon">
+              <svg viewBox="0 0 24 24" fill="none">
+                <path
+                  d="M20 6L9 17L4 12"
+                  stroke="currentColor"
+                  stroke-width="2.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </div>
+          </div>
+          <h3>Your message has been sent ✨</h3>
+
+          <p>
+            Thanks for reaching out. Our team will review your message and get
+            back to you as soon as possible.
+          </p>
+          <button class="lf-btn lf-btn--outline" (click)="reset()">
+            Send another Message
+          </button>
+        </div>
+
+        <div
+          *ngIf="status() === 'error'"
+          class="lf-alert lf-alert--error lf-shake"
+        >
+          ⚠️ {{ errorMessage() }}
+          <button (click)="reset()">Try again</button>
+        </div>
+
+        <form
+          *ngIf="status() !== 'success'"
+          [formGroup]="form"
+          (ngSubmit)="onSubmit()"
+          novalidate
+        >
+          <div class="lf-form-row">
+            <div class="lf-form-group">
+              <label>Full Name</label>
+              <input
+                type="text"
+                formControlName="name"
+                [class.lf-input--error]="invalid('name')"
+                placeholder="Your full name"
+              />
+              <span class="lf-error" *ngIf="invalid('name')">
+                <ng-container *ngIf="f['name'].errors?.['required']">
+                  Name is required.
+                </ng-container>
+
+                <ng-container *ngIf="f['name'].errors?.['minlength']">
+                  Name must be at least 2 characters.
+                </ng-container>
+
+                <ng-container *ngIf="f['name'].errors?.['maxlength']">
+                  Name is too long.
+                </ng-container>
+
+                <ng-container *ngIf="f['name'].errors?.['pattern']">
+                  Name should contain letters only.
+                </ng-container>
+              </span>
+            </div>
+
+            <div class="lf-form-group">
+              <label>Email Address</label>
+              <input
+                type="email"
+                formControlName="email"
+                [class.lf-input--error]="invalid('email')"
+                placeholder="you@example.com"
+              />
+              <span class="lf-error" *ngIf="invalid('email')">
+                <ng-container *ngIf="f['email'].errors?.['required']">
+                  Email is required.
+                </ng-container>
+
+                <ng-container *ngIf="f['email'].errors?.['pattern']">
+                  Please enter a valid email address.
+                </ng-container>
+              </span>
+            </div>
+          </div>
+
+          <div class="lf-form-group">
+            <label>Message</label>
+            <textarea
+              rows="5"
+              formControlName="message"
+              [class.lf-input--error]="invalid('message')"
+              placeholder="Tell us about your learning goals..."
+            ></textarea>
+            <span class="lf-error" *ngIf="invalid('message')">
+              <ng-container *ngIf="f['message'].errors?.['required']">
+                Message is required.
+              </ng-container>
+
+              <ng-container *ngIf="f['message'].errors?.['minlength']">
+                Message must be at least 10 characters.
+              </ng-container>
+
+              <ng-container *ngIf="f['message'].errors?.['maxlength']">
+                Message is too long.
+              </ng-container>
+
+              <ng-container *ngIf="f['message'].errors?.['pattern']">
+                Message cannot contain only spaces.
+              </ng-container>
+            </span>
+          </div>
+
+          <button
+            type="submit"
+            class="lf-btn lf-btn--primary lf-btn--full"
+            [disabled]="status() === 'loading'"
+            [class.lf-btn--loading]="status() === 'loading'"
+          >
+            <span
+              *ngIf="status() === 'loading'"
+              class="spinner-border spinner-border-sm me-2"
+            ></span>
+
+            {{ status() === "loading" ? "Sending..." : "Send Message →" }}
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>

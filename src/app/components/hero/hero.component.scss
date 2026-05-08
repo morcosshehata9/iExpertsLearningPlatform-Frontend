@@ -1,0 +1,71 @@
+  .lf-hero {
+    min-height: 100vh; display: flex; align-items: center;
+    padding: 120px 20px 80px;
+    background: linear-gradient(180deg, var(--lf-surface) 0%, var(--lf-bg) 100%);
+
+    &__badge {
+      display: inline-block; background: #f0fdf4; border: 1px solid #bbf7d0;
+      color: #065f46; font-size: 13.5px; font-weight: 500;
+      padding: 6px 18px; border-radius: 30px; margin-bottom: 24px;
+      animation: lf-fade-up 0.5s ease both;
+    }
+    &__title {
+      font-size: clamp(38px, 6vw, 72px); line-height: 1.1;
+      letter-spacing: -2px; max-width: 760px; margin: 0 auto 18px;
+      animation: lf-fade-up 0.6s ease 0.1s both;
+    }
+    &__sub {
+      font-size: 17.5px; color: var(--lf-muted); max-width: 540px;
+      margin: 0 auto 36px;
+      animation: lf-fade-up 0.6s ease 0.2s both;
+    }
+    &__actions {
+      display: flex; gap: 12px; justify-content: center; flex-wrap: wrap;
+      margin-bottom: 56px;
+      animation: lf-fade-up 0.6s ease 0.3s both;
+    }
+    &__stats {
+      display: flex; align-items: center; justify-content: center;
+      gap: 28px; flex-wrap: wrap; margin-bottom: 48px;
+      animation: lf-fade-up 0.6s ease 0.4s both;
+    }
+    &__logos {
+      animation: lf-fade-up 0.6s ease 0.5s both;
+      span { font-size: 12px; color: var(--lf-muted); display: block; margin-bottom: 14px; }
+    }
+    &__logo-list {
+      display: flex; gap: 20px; justify-content: center; flex-wrap: wrap;
+      div { background: var(--lf-bg2); border: 1px solid var(--lf-border);
+            border-radius: var(--lf-radius-sm); padding: 8px 20px;
+            font-size: 13px; font-weight: 600; color: var(--lf-muted); }
+    }
+  }
+
+  .lf-stat {
+    text-align: center;
+    strong { display: block; font-family: 'Fraunces', serif; font-size: 30px; color: var(--lf-text); }
+    span   { font-size: 13px; color: var(--lf-muted); }
+    &__divider { width: 1px; height: 36px; background: var(--lf-border); }
+  }
+.lf-hero__logo-list {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 28px;
+  flex-wrap: wrap;
+  margin-top: 10px;
+
+  img {
+    height: 100px;
+    width: auto;
+    opacity: 0.6;
+    filter: grayscale(100%);
+    transition: all 0.25s ease;
+  }
+
+  img:hover {
+    opacity: 1;
+    filter: grayscale(0%);
+    transform: translateY(-2px);
+  }
+}

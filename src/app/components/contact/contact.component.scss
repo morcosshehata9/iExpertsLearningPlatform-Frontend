@@ -1,0 +1,261 @@
+  .lf-contact {
+    padding: 96px 0;
+
+    &__layout {
+      display: grid;
+      grid-template-columns: 1fr 1.4fr;
+      gap: 64px;
+      align-items: start;
+
+      @media (max-width: 768px) {
+        grid-template-columns: 1fr;
+        gap: 32px;
+      }
+    }
+
+    &__info {
+      h2 {
+        font-size: clamp(24px, 3.5vw, 34px);
+        margin-bottom: 12px;
+        letter-spacing: -0.5px;
+      }
+
+      p {
+        color: var(--lf-muted);
+        margin-bottom: 28px;
+        font-size: 15px;
+      }
+    }
+
+    &__items {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    &__item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 14px;
+      color: var(--lf-text2);
+
+      span {
+        color: var(--lf-muted);
+      }
+    }
+
+    &__form-wrap {
+      background: var(--lf-surface);
+      border: 1px solid var(--lf-border);
+      border-radius: var(--lf-radius-lg);
+      padding: 36px;
+      box-shadow: 0 2px 20px rgba(0, 0, 0, 0.04);
+    }
+  }
+
+  .lf-form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+
+    @media (max-width: 520px) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .lf-form-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 14px;
+
+    label {
+      font-size: 13.5px;
+      font-weight: 500;
+      color: var(--lf-text2);
+      margin-bottom: 5px;
+    }
+
+    input,
+    textarea {
+      background: var(--lf-bg);
+      border: 1.5px solid var(--lf-border);
+      border-radius: var(--lf-radius-sm);
+      color: var(--lf-text);
+      padding: 10px 14px;
+      font-size: 14.5px;
+      font-family: inherit;
+      transition: border-color 0.15s, box-shadow 0.15s;
+
+      &:focus {
+        outline: none;
+        border-color: var(--lf-accent);
+        box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+      }
+
+      &::placeholder {
+        color: #b0b7c3;
+      }
+
+      &.lf-input--error {
+        border-color: #ef4444;
+      }
+    }
+
+    textarea {
+      resize: vertical;
+      min-height: 120px;
+    }
+  }
+
+  .lf-error {
+    font-size: 12px;
+    color: #ef4444;
+    margin-top: 4px;
+  }
+
+  .lf-alert {
+    padding: 12px 16px;
+    border-radius: var(--lf-radius-sm);
+    font-size: 13.5px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 16px;
+    gap: 10px;
+
+    &--error {
+      background: #fef2f2;
+      border: 1px solid #fecaca;
+      color: #991b1b;
+    }
+
+    button {
+      background: none;
+      border: none;
+      color: inherit;
+      font-size: 13px;
+      text-decoration: underline;
+      cursor: pointer;
+      white-space: nowrap;
+    }
+  }
+
+  .lf-state {
+    text-align: center;
+    padding: 32px 16px;
+
+    &__icon {
+      font-size: 44px;
+      margin-bottom: 12px;
+    }
+
+    h3 {
+      margin-bottom: 6px;
+      font-size: 20px;
+    }
+
+    p {
+      color: var(--lf-muted);
+    }
+
+    &--success .lf-state__icon {
+      color: var(--lf-green);
+    }
+  }
+
+  .lf-btn--loading {
+    pointer-events: none;
+    opacity: 0.9;
+
+    .spinner-border {
+      animation: lf-spin 0.7s linear infinite;
+    }
+  }
+
+  @keyframes lf-spin {
+    from {
+      transform: rotate(0deg);
+    }
+
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+  .lf-fade-in {
+    animation: lf-fade-up 0.45s ease;
+  }
+
+  @keyframes lf-fade-up {
+    from {
+      opacity: 0;
+      transform: translateY(18px);
+    }
+
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .lf-shake {
+    animation: lf-shake 0.35s ease;
+  }
+
+  @keyframes lf-shake {
+    0% {
+      transform: translateX(0);
+    }
+
+    20% {
+      transform: translateX(-6px);
+    }
+
+    40% {
+      transform: translateX(6px);
+    }
+
+    60% {
+      transform: translateX(-4px);
+    }
+
+    80% {
+      transform: translateX(4px);
+    }
+
+    100% {
+      transform: translateX(0);
+    }
+  }
+
+  .lf-state__icon {
+    width: 82px;
+    height: 82px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #dcfce7, #bbf7d0);
+    color: #16a34a;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    box-shadow:
+      0 10px 30px rgba(34, 197, 94, 0.18),
+      0 0 0 10px rgba(34, 197, 94, 0.05);
+
+    animation:
+      lf-success-pop 0.45s ease,
+      lf-success-float 3s ease-in-out infinite;
+
+    svg {
+      width: 34px;
+      height: 34px;
+    }
+  }
+
+  .lf-state__icon-wrap {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+  }

@@ -1,0 +1,46 @@
+.lf-about {
+  padding: 100px 0;
+  background: var(--lf-bg);
+
+  &__content {
+    h3 {
+      font-size: 28px;
+      margin-bottom: 15px;
+      color: var(--lf-text);
+    }
+
+    p {
+      color: var(--lf-muted);
+      margin-bottom: 18px;
+    }
+  }
+
+  &__list {
+    list-style: none;
+    padding: 0;
+
+    li {
+      margin-bottom: 10px;
+      font-size: 15px;
+      color: var(--lf-text2);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+  }
+
+  &__image {
+    background: var(--lf-surface);
+    border-radius: var(--lf-radius-lg);
+    padding: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    text-align: center;
+
+    img {
+      width: 100%;
+      max-width: 420px;
+      height: auto;
+      object-fit: contain;
+    }
+  }
+}

@@ -1,0 +1,23 @@
+<section class="lf-testimonials" id="testimonials">
+  <div class="container">
+    <div class="lf-section-header text-center">
+      <div class="lf-tag">Student Reviews</div>
+      <h2>Life-Changing Results</h2>
+    </div>
+    <div class="lf-testimonials__grid">
+      <div class="lf-testimonial-card" *ngFor="let t of testimonials">
+        <div class="lf-testimonial-card__stars">★★★★★</div>
+        <p class="lf-testimonial-card__quote">"{{ t.quote }}"</p>
+        <div class="lf-testimonial-card__author">
+          <div class="lf-avatar"
+               [style.background]="t.color + '18'"
+               [style.color]="t.color">{{ t.initials }}</div>
+          <div>
+            <strong>{{ t.name }}</strong>
+            <span>{{ t.role }}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

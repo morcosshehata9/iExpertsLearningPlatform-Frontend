@@ -1,0 +1,18 @@
+  .lf-testimonials {
+    padding: 96px 0; background: var(--lf-surface);
+    &__grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
+  }
+  .lf-testimonial-card {
+    background: var(--lf-bg); border: 1px solid var(--lf-border);
+    border-radius: var(--lf-radius-lg); padding: 26px;
+    &__stars { color: #f59e0b; font-size: 16px; letter-spacing: 2px; margin-bottom: 12px; }
+    &__quote { color: var(--lf-text2); font-size: 14.5px; line-height: 1.7; font-style: italic; margin-bottom: 18px; }
+    &__author { display: flex; align-items: center; gap: 10px;
+      strong { display: block; font-size: 13.5px; font-family: 'DM Sans', sans-serif; }
+      span   { font-size: 12px; color: var(--lf-muted); } }
+  }
+  .lf-avatar {
+    width: 42px; height: 42px; border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 13px; font-weight: 600; flex-shrink: 0;
+  }

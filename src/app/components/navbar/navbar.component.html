@@ -1,0 +1,39 @@
+<nav class="lf-nav" [class.scrolled]="scrolled()">
+  <div class="lf-nav__inner container">
+
+    <div class="d-flex align-items-center gap-3">
+      <a class="lf-nav__brand" (click)="scrollTo('hero')">
+  <img src="logo.png" alt="iExpertsLearningPlatform Logo" class="lf-nav__logo" />
+</a>
+    </div>
+
+    <ul class="lf-nav__links d-none d-md-flex">
+      <li><a (click)="scrollTo('features')">Why iExperts?</a></li>
+      <li><a (click)="scrollTo('courses')">Courses</a></li>
+      <li><a (click)="scrollTo('about')">About</a></li>
+      <li><a (click)="scrollTo('testimonials')">Reviews</a></li>
+    </ul>
+
+    <div class="d-none d-md-flex align-items-center gap-2">
+      <button class="lf-btn lf-btn--outline"
+              (click)="scrollTo('contact')">Log in</button>
+
+      <button class="lf-btn lf-btn--primary"
+              (click)="scrollTo('contact')">Start Free</button>
+    </div>
+
+    <button class="lf-nav__burger d-md-none"
+            (click)="menuOpen.set(!menuOpen())">
+      <span></span><span></span><span></span>
+    </button>
+
+  </div>
+
+  <div class="lf-nav__mobile" [class.open]="menuOpen()">
+    <a (click)="scrollTo('features')">Why LearnFlow</a>
+    <a (click)="scrollTo('courses')">Courses</a>
+    <a (click)="scrollTo('about')">About</a>
+    <a (click)="scrollTo('testimonials')">Reviews</a>
+    <a (click)="scrollTo('contact')">Start Free →</a>
+  </div>
+</nav>

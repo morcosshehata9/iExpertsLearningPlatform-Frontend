@@ -1,0 +1,16 @@
+<section class="lf-features" id="features">
+  <div class="container">
+    <div class="lf-section-header text-center">
+      <div class="lf-tag">Why iExperts</div>
+      <h2>Everything You Need to Grow</h2>
+      <p>Built for serious learners who want results, not just content.</p>
+    </div>
+    <div class="lf-features__grid">
+      <div class="lf-feature-card" *ngFor="let f of features">
+        <div class="lf-feature-card__icon">{{ f.icon }}</div>
+        <h3>{{ f.title }}</h3>
+        <p>{{ f.desc }}</p>
+      </div>
+    </div>
+  </div>
+</section>

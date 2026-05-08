@@ -1,1 +1,98 @@
-/* You can add global styles to this file, and also import other style files */
+// ─── Import Bootstrap ─────────────────────────────────────────────────────
+@import 'bootstrap/scss/bootstrap';
+
+// ─── Google Fonts ─────────────────────────────────────────────────────────
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=Fraunces:wght@700;900&display=swap');
+
+// ─── Design Tokens ────────────────────────────────────────────────────────
+:root {
+  --lf-bg:        #fafaf8;
+  --lf-bg2:       #f4f3ef;
+  --lf-surface:   #ffffff;
+  --lf-accent:    #2563eb;
+  --lf-accent2:   #0ea5e9;
+  --lf-green:     #059669;
+  --lf-amber:     #d97706;
+  --lf-text:      #111827;
+  --lf-text2:     #374151;
+  --lf-muted:     #6b7280;
+  --lf-border:    #e5e3dc;
+  --lf-radius-sm: 8px;
+  --lf-radius-md: 12px;
+  --lf-radius-lg: 20px;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  background:  var(--lf-bg);
+  color:       var(--lf-text);
+  font-family: 'DM Sans', system-ui, sans-serif;
+  line-height: 1.7;
+  overflow-x:  hidden;
+}
+
+h1, h2, h3 { font-family: 'Fraunces', serif; font-weight: 700; color: var(--lf-text); }
+
+// ─── Shared Utilities ─────────────────────────────────────────────────────
+.lf-text-accent {
+  background: linear-gradient(135deg, var(--lf-accent), var(--lf-accent2));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.lf-tag {
+  display: inline-block;
+  background: #eff6ff;
+  border: 1px solid #bfdbfe;
+  color: #1d4ed8;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.6px;
+  text-transform: uppercase;
+  padding: 4px 14px;
+  border-radius: 20px;
+  margin-bottom: 12px;
+}
+
+.lf-section-header {
+  margin-bottom: 52px;
+  h2 { font-size: clamp(26px, 4vw, 38px); margin-bottom: 10px; letter-spacing: -0.5px; }
+  p  { color: var(--lf-muted); font-size: 16px; max-width: 520px; margin: 0 auto; }
+}
+
+// ─── Buttons ──────────────────────────────────────────────────────────────
+.lf-btn {
+  display: inline-flex; align-items: center; justify-content: center;
+  border-radius: var(--lf-radius-sm); font-weight: 500; cursor: pointer;
+  padding: 11px 24px; font-size: 14.5px; border: 1.5px solid transparent;
+  transition: all 0.18s; gap: 6px; text-decoration: none;
+
+  &--primary {
+    background: var(--lf-accent); color: white; border-color: var(--lf-accent);
+    box-shadow: 0 1px 3px rgba(37,99,235,0.25);
+    &:hover { background: #1d4ed8; border-color: #1d4ed8; box-shadow: 0 4px 14px rgba(37,99,235,0.35); transform: translateY(-1px); }
+    &:active { transform: translateY(0); }
+  }
+  &--outline {
+    background: transparent; color: var(--lf-accent); border-color: var(--lf-accent);
+    &:hover { background: #eff6ff; }
+  }
+  &--ghost {
+    background: transparent; color: var(--lf-text2); border-color: var(--lf-border);
+    &:hover { background: var(--lf-bg2); border-color: #c5c3bb; }
+  }
+  &--lg   { padding: 14px 30px; font-size: 15.5px; border-radius: var(--lf-radius-md); }
+  &--sm   { padding: 7px 14px; font-size: 13px; }
+  &--full { width: 100%; }
+
+  &:disabled { opacity: 0.65; cursor: not-allowed; transform: none !important; }
+}
+
+
+// ─── Animations ───────────────────────────────────────────────────────────
+@keyframes lf-fade-up {
+  from { opacity: 0; transform: translateY(22px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
