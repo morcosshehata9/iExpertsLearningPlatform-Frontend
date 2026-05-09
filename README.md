@@ -112,6 +112,6 @@ In `angular.json`, under `projects → architect → build → options → style
 
 <div align="center">
 
-Built with ❤️ using **Angular 17** + **ASP.NET Core 8**
+Built with ❤️ using **Angular 17**
 
 </div>
