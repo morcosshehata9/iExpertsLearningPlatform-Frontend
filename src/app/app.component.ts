@@ -15,18 +15,8 @@ import { FooterComponent }       from './components/footer/footer.component';
     NavbarComponent, HeroComponent, FeaturesComponent, CoursesComponent,
     AboutComponent, TestimonialsComponent, ContactComponent, FooterComponent
   ],
-  template: `
-    <app-navbar></app-navbar>
-    <main>
-      <app-hero></app-hero>
-      <app-features></app-features>
-      <app-courses></app-courses>
-      <app-about></app-about>
-      <app-testimonials></app-testimonials>
-      <app-contact></app-contact>
-    </main>
-    <app-footer></app-footer>
-  `
+  templateUrl: './app.component.html',
+  styleUrl:   './app.component.scss'
 })
 export class AppComponent {
   title = 'iExpertsLearningPlatform-frontend';
