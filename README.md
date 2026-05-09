@@ -62,7 +62,7 @@ iExperts Learning Platform is a modern E-Learning SaaS landing page with a fully
 ### 1. Clone the repository
 
 ```bash
-git clone https://github.com/your-username/iExpertsLearningPlatform.git
+git clone https://github.com/morcosshehata9/iExpertsLearningPlatform-Frontend.git
 cd iExpertsLearningPlatform
 ```
 
