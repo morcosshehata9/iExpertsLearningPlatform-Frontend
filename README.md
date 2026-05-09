@@ -1,59 +1,117 @@
-# IExpertsLearningPlatformFrontend
+# 📖 iExperts Learning Platform - E-Learning Platform
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.2.11.
+iExperts Learning Platform is a modern E-Learning SaaS landing page with a fully integrated backend API. It showcases clean frontend architecture using Angular 17 standalone components
 
-## Development server
+## Features
 
-To start a local development server, run:
+- ✅ Angular 17 **standalone components** (no NgModules)
+- ✅ **Reactive Forms** with field-level validation messages
+- ✅ **Signal-based** UI state management (`idle | loading | success | error`)
+- ✅ **Loading spinner** during API submission
+- ✅ Success and error states with user feedback
+- ✅ **Mobile-first** responsive layout (Bootstrap 5 + custom SCSS)
+- ✅ Smooth scroll navigation with sticky navbar
+- ✅ CSS **keyframe animations** (staggered hero entrance)
+- ✅ Environment-based API URL configuration
+- ✅ Typed HTTP client with `Observable` and `catchError`
+
+
+---
+
+## Tech Stack
+
+| Layer      | Technology                          |
+|------------|-------------------------------------|
+| Frontend   | Angular 17, TypeScript, SCSS        |
+| UI Library | Bootstrap 5   |
+| Forms      | Angular Reactive Forms              |
+| HTTP       | Angular HttpClient (Fetch API)      |
+| Fonts      | DM Sans, Fraunces (Google Fonts)    |
+
+---
+
+## Project Structure
+
+```
+── iExpertsLearningPlatform-frontend/             # Angular 17 Frontend
+    └── src/
+        └── app/
+            ├── components/
+            │   ├── navbar/         # Sticky responsive navbar
+            │   ├── hero/           # Hero section + CTA
+            │   ├── features/       # Why iExpertsLearningPlatform section
+            │   ├── courses/        # Featured course cards
+            │   ├── about/          # About section
+            │   ├── testimonials/   # Student reviews
+            │   ├── contact/        # Reactive form + API call
+            │   └── footer/         # Footer with links
+            ├── models/
+            │   └── contact.model.ts
+            ├── services/
+            │   └── contact.service.ts
+            ├── environments/
+            │   ├── environment.ts
+            │   └── environment.prod.ts
+            ├── app.component.ts
+            ├── app.config.ts
+            └── styles.scss
+```
+
+## Getting Started
+
+### 1. Clone the repository
 
 ```bash
+git clone https://github.com/your-username/iExpertsLearningPlatform.git
+cd iExpertsLearningPlatform
+```
+
+### 2. Set up the Frontend
+
+Open a **new terminal window**:
+
+```bash
+cd iExpertsLearningPlatform-frontend
+
+# Install npm dependencies
+npm install
+
+# Start the Angular dev server
 ng serve
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+The app will be available at `http://localhost:4200`.
 
-## Code scaffolding
+### 4. Configure Bootstrap in angular.json
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+In `angular.json`, under `projects → architect → build → options → styles`, ensure this order:
 
-```bash
-ng generate component component-name
+```json
+"styles": [
+  "node_modules/bootstrap/dist/css/bootstrap.min.css",
+  "src/styles.scss"
+]
 ```
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+---
 
-```bash
-ng generate --help
-```
+## Pages & Sections
 
-## Building
+| Section        | Description                                               |
+|----------------|-----------------------------------------------------------|
+| **Navbar**     | Sticky, scroll-aware with mobile hamburger menu           |
+| **Hero**       | Headline, subheadline, dual CTA buttons, stats, logos     |
+| **Features**   | 6-card grid highlighting platform benefits                |
+| **Courses**    | 3 featured course cards with level, duration, rating      |
+| **About**      | Mission statement and key differentiators                 |
+| **Testimonials** | 3 student reviews with ratings and avatars              |
+| **Contact**    | Reactive form → POST to .NET API → success/error feedback |
+| **Footer**     | Brand, copyright, policy links                            |
 
-To build the project run:
+---
 
-```bash
-ng build
-```
+<div align="center">
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+Built with ❤️ using **Angular 17** + **ASP.NET Core 8**
 
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+</div>
